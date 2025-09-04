@@ -20,8 +20,8 @@
 
 ### Gabryel Leal:
 
-#### 1:
-#### 2:
-#### 3:
-#### 4:
-#### 5
+#### 1:AUTENTICAÇÃO
+#### 2:LOCALIZAÇÃO
+#### 3: GESTÃO DE VAGAS 
+#### 4: INTEGRAÇÃO DE SENSORES
+#### 5: CONTROLE DE SEGURANÇA
