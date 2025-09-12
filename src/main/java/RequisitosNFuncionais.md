@@ -10,13 +10,12 @@
 #### 4- Todas as comunicações com o sistema devem ser criptografadas via HTTPS.
 ## 5 DESEMPENHO
 #### 5 - O tempo médio de resposta das requisições da API deve ser inferior a 1 segundo
-## 6
-####
-## 7
-####
-## 8
-####
-## 9
-####
-## 10
-####
+## 6 ESCALABILIDADE
+#### Arquitetura deve suportar expansão para até 10.000
+## 7 Auditabilidade
+#### Rastreabilidade completa de todas as transações
+## 8 Localização e Internacionalização 
+#### Suporte a multiplos idiomas
+## 9 PRIVAIDADE
+#### Anonização automatica de dados pessoais após período legal
+
