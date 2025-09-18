@@ -9,8 +9,8 @@ import java.util.List;
 public class VeiculoApplication {
     private VeiculoRepository veiculoRepository;
 
-    public VeiculoApplication(VeiculoApplication veiculoApplication){
-        this.veiculoApplication = veiculoApplication;
+    public VeiculoApplication(VeiculoRepository veiculoRepository){
+        this.veiculoRepository = veiculoRepository;
     }
 
     public List<Veiculo> buscarTodos() throws IOException {
