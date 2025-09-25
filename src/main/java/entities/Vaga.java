@@ -57,7 +57,7 @@ public class Vaga {
         this.setor = setor;
     }
 
-    public Boolean getTemSensor() {
+    public Boolean isOcupado() {
         return temSensor;
     }
 
