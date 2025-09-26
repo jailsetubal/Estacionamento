@@ -13,23 +13,23 @@ public class AssinaturaApplication {
         this.assinaturaRepository = assinaturaRepository;
     }
 
-    public List<Assinatura> buscarTodos() throws IOException {
+    public List<Assinatura> buscarTodos() throws IOException{
         return this.assinaturaRepository.buscarTodos();
     }
 
-    public Assinatura buscarPorId(Assinatura assinatura) throws IOException{
+    public Assinatura buscarPorId(Assinatura assinatura){
         return this.assinaturaRepository.buscarPorId(assinatura.getId());
     }
 
-    public void adicionar(Assinatura assinatura) throws IOException{
+    public void adicionar (Assinatura assinatura) throws IOException{
         this.assinaturaRepository.adicionar(assinatura);
     }
 
-    public void remover(Assinatura assinatura) throws IOException{
+    public void remover (Assinatura assinatura) throws IOException{
         this.assinaturaRepository.remover(assinatura.getId());
     }
 
-    public void atualizar(Assinatura assinatura, int id) throws IOException{
+    public void atualizar (Assinatura assinatura, int id) throws IOException{
         this.assinaturaRepository.atualizar(assinatura.getId(), assinatura);
     }
 }
