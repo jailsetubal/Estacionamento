@@ -8,8 +8,6 @@ public class PlanoModels {
     private int valor;
     private int franquiaHoras;
 
-
-
     public PlanoModels(int id, String nome, int periodicidades, String tipoVeiculo, int valor, int franquiaHoras) {
         this.id = id;
         this.nome = nome;
