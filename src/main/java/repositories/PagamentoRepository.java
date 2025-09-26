@@ -15,7 +15,7 @@ public class PagamentoRepository {
     public Pagamento buscarPorID(int id){
         return pagamentos
                 .stream()
-                .filter(pagamento -> pagamento.getId() == id)
+                .filter(p -> p.getId() == id)
                 .findFirst().get();
     }
 
@@ -32,7 +32,7 @@ public class PagamentoRepository {
 
         pagamentoInMemory.setDataPagamento(pagamento.getDataPagamento());
         pagamentoInMemory.setValor(pagamento.getValor());
-        pagamentoInMemory.setStatusPagamento(pagamento.getStatusPagamento());
+        pagamentoInMemory.setDataPagamento(pagamento.getDataPagamento());
     }
 
 
