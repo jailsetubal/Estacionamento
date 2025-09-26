@@ -1,8 +1,6 @@
 package applications;
 
-import entities.Cliente;
 import entities.FormaPagamento;
-import repositories.ClienteRepository;
 import repositories.FormaPagamentoRepository;
 
 import java.io.IOException;

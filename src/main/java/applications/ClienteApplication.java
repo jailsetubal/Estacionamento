@@ -13,23 +13,24 @@ public class ClienteApplication {
         this.clienteRepository = clienteRepository;
     }
 
-    public List<Cliente> buscarTodos() throws IOException {
+    public List<Cliente> buscarTodos() throws IOException{
         return this.clienteRepository.buscarTodos();
     }
 
-    public Cliente buscarPorId(Cliente cliente) throws IOException{
+    public Cliente buscarPorId(Cliente cliente){
         return this.clienteRepository.buscarPorId(cliente.getId());
     }
 
-    public void adicionar(Cliente cliente) throws IOException{
+    public void adicionar (Cliente cliente) throws IOException{
         this.clienteRepository.adicionar(cliente);
     }
 
-    public void remover(Cliente cliente) throws IOException{
+    public void remover (Cliente cliente) throws IOException{
         this.clienteRepository.remover(cliente.getId());
     }
 
-    public void atualizar(Cliente cliente, int id) throws IOException{
+    public void atualizar (Cliente cliente, int id) throws IOException{
         this.clienteRepository.atualizar(cliente.getId(), cliente);
     }
 }
+
