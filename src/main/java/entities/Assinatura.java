@@ -9,6 +9,10 @@ public class Assinatura {
     private LocalDateTime fim;
     private boolean ativo;
 
+    public Assinatura(){
+
+    }
+
     public Assinatura(int id, LocalDateTime inicio, LocalDateTime fim, boolean ativo) {
         this.id = id;
         this.inicio = inicio;

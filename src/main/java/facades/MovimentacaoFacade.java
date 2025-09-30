@@ -30,7 +30,7 @@ public class MovimentacaoFacade {
         this.movimentacaoApplication.remover(movimentacao);
     }
 
-    public void atualizar(int id, movimentacao movimentacao) throws IOException{
+    public void atualizar(int id, Movimentacao movimentacao) throws IOException{
         this.movimentacaoApplication.atualizar(movimentacao, movimentacao.getId());
     }
 }

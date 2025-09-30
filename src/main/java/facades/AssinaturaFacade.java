@@ -2,10 +2,12 @@ package facades;
 
 import applications.AssinaturaApplication;
 import entities.Assinatura;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
 
+@Component
 public class AssinaturaFacade {
     private final AssinaturaApplication assinaturaApplication;
 

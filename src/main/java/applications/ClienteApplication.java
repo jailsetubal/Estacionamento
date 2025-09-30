@@ -1,11 +1,14 @@
 package applications;
 
 import entities.Cliente;
-import repositories.ClienteRepository;
+import interfaces.ClienteRepository;
+import models.ClienteModels;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
+@Service
 public class ClienteApplication {
     private ClienteRepository clienteRepository;
 
@@ -13,24 +16,24 @@ public class ClienteApplication {
         this.clienteRepository = clienteRepository;
     }
 
-    public List<Cliente> buscarTodos() throws IOException{
+    public List<ClienteModels> buscarTodos() throws IOException{
         return this.clienteRepository.buscarTodos();
     }
 
-    public Cliente buscarPorId(Cliente cliente){
-        return this.clienteRepository.buscarPorId(cliente.getId());
+    public ClienteModels buscarPorId(int id){
+        return this.clienteRepository.buscarPorId(id);
     }
 
-    public void adicionar (Cliente cliente) throws IOException{
-        this.clienteRepository.adicionar(cliente);
+    public void adicionar (ClienteModels clienteModels) throws IOException{
+        this.clienteRepository.adicionar(clienteModels);
     }
 
-    public void remover (Cliente cliente) throws IOException{
-        this.clienteRepository.remover(cliente.getId());
+    public void remover (int id) throws IOException{
+        this.clienteRepository.remover(id);
     }
 
-    public void atualizar (Cliente cliente, int id) throws IOException{
-        this.clienteRepository.atualizar(cliente.getId(), cliente);
+    public void atualizar (ClienteModels clienteModels, int id) throws IOException{
+        this.clienteRepository.atualizar(clienteModels.getId(), clienteModels);
     }
 }
 

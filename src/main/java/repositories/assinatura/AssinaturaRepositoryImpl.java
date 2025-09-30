@@ -1,11 +1,11 @@
-package repositories;
+package repositories.assinatura;
 
 import entities.Assinatura;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AssinaturaRepository {
+public class AssinaturaRepositoryImpl {
     private List<Assinatura> assinaturas = new ArrayList<>();
 
     public List<Assinatura> buscarTodos(){

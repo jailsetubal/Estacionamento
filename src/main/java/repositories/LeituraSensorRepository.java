@@ -32,7 +32,7 @@ public class LeituraSensorRepository {
     public void atualizar(int id, LeituraSensor leituraSensor){
         LeituraSensor leituraInMemoiry = buscarPorId(id);
 
-        leituraInMemoiry.setHoraDeteccao(leituraSensor.getHoraDeteccao());
+        leituraInMemoiry.setMomento(leituraSensor.getMomento());
         leituraInMemoiry.setOcupado(leituraSensor.isOcupado());
 
 

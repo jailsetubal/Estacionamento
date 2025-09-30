@@ -1,4 +1,4 @@
-package repositories;
+package repositories.cliente;
 
 import interfaces.ClienteRepository;
 import models.ClienteModels;

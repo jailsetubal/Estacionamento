@@ -1,6 +1,16 @@
 package models;
 
+
+import entities.Cliente;
+import jakarta.persistence.*;
+import org.springframework.context.annotation.Bean;
+
+@Entity
+@Table(name = "Clientes")
 public class ClienteModels {
+    @Id
+    @GeneratedValue
+
     private int id;
     private String nome;
     private String email;
@@ -53,5 +63,20 @@ public class ClienteModels {
 
     public void setTelefone(int telefone) {
         this.telefone = telefone;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Id: " + id + "\n" +
+                "Nome: " + nome + "\n" +
+                "Email: " + email + "\n" +
+                "Endereço: " + endereco + "\n" +
+                "Telefone: " + telefone + "\n";
+    }
+
+    @Bean
+    public Cliente getCliente() {
+        return new Cliente();
     }
 }

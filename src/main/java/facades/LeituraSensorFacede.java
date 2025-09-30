@@ -1,14 +1,15 @@
 package facades;
 
 import applications.LeituraSensorApplication;
+import entities.LeituraSensor;
 
 import java.io.IOException;
 import java.util.List;
 
-public class LeituraSensor {
+public class LeituraSensorFacede {
     private LeituraSensorApplication leituraSensorApplication;
 
-    public LeituraSensorFacade(LeituraSensorApplication leituraSensorApplication) {
+    public LeituraSensorFacede(LeituraSensorApplication leituraSensorApplication) {
         this.leituraSensorApplication = leituraSensorApplication;
     }
 

@@ -1,19 +1,22 @@
 package applications;
 
 import entities.Assinatura;
-import repositories.AssinaturaRepository;
+import models.AssinaturaModels;
+import org.springframework.stereotype.Service;
+import repositories.assinatura.AssinaturaRepositoryImpl;
 
 import java.io.IOException;
 import java.util.List;
 
+@Service
 public class AssinaturaApplication {
-    private AssinaturaRepository assinaturaRepository;
+    private AssinaturaRepositoryImpl assinaturaRepository;
 
-    public AssinaturaApplication(AssinaturaRepository assinaturaRepository){
+    public AssinaturaApplication(AssinaturaRepositoryImpl assinaturaRepository){
         this.assinaturaRepository = assinaturaRepository;
     }
 
-    public List<Assinatura> buscarTodos() throws IOException{
+    public List<AssinaturaModels> buscarTodos() throws IOException{
         return this.assinaturaRepository.buscarTodos();
     }
 
