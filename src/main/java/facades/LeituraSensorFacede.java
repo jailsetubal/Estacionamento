@@ -6,8 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class LeituraSensor {
-
-    private final LeituraSensorApplication leituraSensorApplication;
+    private LeituraSensorApplication leituraSensorApplication;
 
     public LeituraSensorFacade(LeituraSensorApplication leituraSensorApplication) {
         this.leituraSensorApplication = leituraSensorApplication;
