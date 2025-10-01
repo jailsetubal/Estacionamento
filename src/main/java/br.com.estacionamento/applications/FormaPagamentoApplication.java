@@ -1,0 +1,35 @@
+package br.com.estacionamento.applications;
+
+import br.com.estacionamento.entities.FormaPagamento;
+import br.com.estacionamento.repositories.FormaPagamentoRepository;
+
+import java.io.IOException;
+import java.util.List;
+
+public class FormaPagamentoApplication {
+    private FormaPagamentoRepository formaPagamentoRepository;
+
+    public FormaPagamentoApplication(FormaPagamentoRepository formaPagamentoRepository){
+        this.formaPagamentoRepository = formaPagamentoRepository;
+    }
+
+    public List<FormaPagamento> buscarTodos() throws IOException {
+        return this.formaPagamentoRepository.buscarTodos();
+    }
+
+    public FormaPagamento buscarPorId(FormaPagamento formaPagamento) throws IOException{
+        return this.formaPagamentoRepository.buscarPorId(formaPagamento.getId());
+    }
+
+    public void adicionar(FormaPagamento formaPagamento) throws IOException{
+        this.formaPagamentoRepository.adicionar(formaPagamento);
+    }
+
+    public void remover(FormaPagamento formaPagamento) throws IOException{
+        this.formaPagamentoRepository.remover(formaPagamento.getId());
+    }
+
+    public void atualizar(FormaPagamento formaPagamento, int id) throws IOException{
+        this.formaPagamentoRepository.atualizar(formaPagamento.getId(), formaPagamento);
+    }
+}
