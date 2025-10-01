@@ -17,6 +17,10 @@ public class ClienteModels {
     private String endereco;
     private int telefone;
 
+    public ClienteModels(){
+
+    }
+
     public ClienteModels(int id, String nome, String email, String endereco, int telefone){
         this.id = id;
         this.nome = nome;

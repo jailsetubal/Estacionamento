@@ -32,7 +32,7 @@ public class ClienteApplication {
     }
 
     public void atualizar (ClienteModels clienteModels, int id) throws IOException{
-        this.clienteRepository.atualizar(clienteModels.getId(), clienteModels);
+        this.clienteRepository.atualizar(id, clienteModels);
     }
 }
 
