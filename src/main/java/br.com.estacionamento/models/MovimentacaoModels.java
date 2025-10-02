@@ -1,10 +1,23 @@
 package br.com.estacionamento.models;
 
+
+import br.com.estacionamento.entities.Cliente;
+import br.com.estacionamento.entities.Movimentacao;
+import jakarta.persistence.*;
+import org.springframework.context.annotation.Bean;
+
+@Entity
+@Table(name = "Movimentacoes")
 public class MovimentacaoModels {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String entrada;
     private String saida;
     private float valorCalculado;
+
+    public MovimentacaoModels(){
+    }
 
     public MovimentacaoModels(int id, String entrada, String saida, float valorCalculado){
         this.id = id;
@@ -43,6 +56,19 @@ public class MovimentacaoModels {
 
     public void setValorCalculado(float valorCalculado) {
         this.valorCalculado = valorCalculado;
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + id + "\n" +
+                "Entrada: " + entrada + "\n" +
+                "Saída: " + saida + "\n" +
+                "Valor Calculado: " + valorCalculado + "\n";
+    }
+
+    @Bean
+    public Movimentacao getMovimentacao() {
+        return new Movimentacao();
     }
 }
 

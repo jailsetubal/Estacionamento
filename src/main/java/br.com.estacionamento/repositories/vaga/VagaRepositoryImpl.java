@@ -1,25 +1,26 @@
-package br.com.estacionamento.repositories;
+package br.com.estacionamento.repositories.vaga;
 
 import br.com.estacionamento.entities.Vaga;
+import br.com.estacionamento.models.VagaModels;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class VagaRepository {
-    private List<Vaga> vagas = new ArrayList<>();
+public class VagaRepositoryImpl {
+    private List<VagaModels> vagas = new ArrayList<>();
 
-    public List<Vaga> buscarTodos(){
+    public List<VagaModels> buscarTodos(){
         return vagas;
     }
 
-    public Vaga buscarPorId(int id){
+    public VagaModels buscarPorId(int id){
         return vagas
                 .stream()
                 .filter(vaga -> vaga.getId() == id)
                 .findFirst().get();
     }
 
-    public void adicionar(Vaga newVaga){
+    public void adicionar(VagaModels newVaga){
         this.vagas.add(newVaga);
     }
 
@@ -27,8 +28,8 @@ public class VagaRepository {
         this.vagas.removeIf(vaga -> vaga.getId() == id);
     }
 
-    public void atualizar(int id, Vaga vaga){
-        Vaga vagaInMemory = buscarPorId(id);
+    public void atualizar(int id, VagaModels vaga){
+        VagaModels vagaInMemory = buscarPorId(id);
 
         vagaInMemory.setNumeroVaga(vaga.getNumeroVaga());
         vagaInMemory.setTipoVaga(vaga.getTipoVaga());

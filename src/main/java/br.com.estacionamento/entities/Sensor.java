@@ -4,6 +4,10 @@ public class Sensor{
     private int id;
     private String dataInstalacao;
 
+    public Sensor(){
+
+    }
+
     public Sensor(int id, String dataInstalacao) {
         this.id = id;
         this.dataInstalacao = dataInstalacao;

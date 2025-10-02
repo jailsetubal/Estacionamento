@@ -1,11 +1,15 @@
 package br.com.estacionamento.applications;
 
 import br.com.estacionamento.entities.Veiculo;
-import br.com.estacionamento.repositories.VeiculoRepository;
+import br.com.estacionamento.interfaces.VeiculoRepository;
+import br.com.estacionamento.models.VeiculoModels;
+import br.com.estacionamento.repositories.veiculo.VeiculoRepositoryImpl;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
+@Service
 public class VeiculoApplication {
     private VeiculoRepository veiculoRepository;
 
@@ -13,24 +17,24 @@ public class VeiculoApplication {
         this.veiculoRepository = veiculoRepository;
     }
 
-    public List<Veiculo> buscarTodos() throws IOException {
+    public List<VeiculoModels> buscarTodos() throws IOException {
         return this.veiculoRepository.buscarTodos();
     }
 
-    public Veiculo buscarPorId(Veiculo veiculo) throws IOException{
-        return this.veiculoRepository.buscarPorId(veiculo.getId());
+    public VeiculoModels buscarPorId(int id) throws IOException{
+        return this.veiculoRepository.buscarPorId(id);
     }
 
-    public void adicionar(Veiculo veiculo) throws IOException{
-        this.veiculoRepository.adicionar(veiculo);
+    public void adicionar(VeiculoModels veiculoModels) throws IOException{
+        this.veiculoRepository.adicionar(veiculoModels);
     }
 
-    public void remover(Veiculo veiculo) throws IOException{
-        this.veiculoRepository.remover(veiculo.getId());
+    public void remover(int id) throws IOException{
+        this.veiculoRepository.remover(id);
     }
 
-    public void atualizar(Veiculo veiculo, int id) throws IOException{
-        this.veiculoRepository.atualizar(veiculo.getId(), veiculo);
+    public void atualizar(VeiculoModels veiculoModels, int id) throws IOException{
+        this.veiculoRepository.atualizar(id, veiculoModels);
     }
 }
 

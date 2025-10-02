@@ -1,25 +1,25 @@
-package br.com.estacionamento.repositories;
+package br.com.estacionamento.repositories.plano;
 
-import br.com.estacionamento.entities.Plano;
+import br.com.estacionamento.models.PlanoModels;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlanoRepository {
-    private List<Plano> planos = new ArrayList<>();
+public class PlanoRepositoryImpl {
+    private List<PlanoModels> planos = new ArrayList<>();
 
-    public List<Plano> buscarTodos(){
+    public List<PlanoModels> buscarTodos(){
         return planos;
     }
 
-    public Plano buscarPorId(int id){
+    public PlanoModels buscarPorId(int id){
         return planos
                 .stream()
                 .filter(plano -> plano.getId() == id)
                 .findFirst().get();
     }
 
-    public void adicionar(Plano planosEst){
+    public void adicionar(PlanoModels planosEst){
         this.planos.add(planosEst);
     }
 
@@ -27,8 +27,8 @@ public class PlanoRepository {
         this.planos.removeIf(plano -> plano.getId() == id);
     }
 
-    public void atualizar(int id, Plano planosEst){
-        Plano planoInmemory = buscarPorId(id);
+    public void atualizar(int id, PlanoModels planosEst){
+        PlanoModels planoInmemory = buscarPorId(id);
 
         planoInmemory.setNome(planosEst.getNome());
         planoInmemory.setPeriodicidades(planosEst.getPeriodicidades());

@@ -6,6 +6,10 @@ public class Movimentacao {
     private String saida;
     private float valorCalculado;
 
+    public Movimentacao(){
+
+    }
+
     public Movimentacao(int id, String entrada, String saida, float valorCalculado){
         this.id = id;
         this.entrada = entrada;

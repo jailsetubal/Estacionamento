@@ -1,12 +1,26 @@
 package br.com.estacionamento.models;
 
+
+import br.com.estacionamento.entities.Cliente;
+import br.com.estacionamento.entities.Plano;
+import jakarta.persistence.*;
+import org.springframework.context.annotation.Bean;
+
+@Entity
+@Table(name = "Planos")
 public class PlanoModels {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
     private int periodicidades;
     private String tipoVeiculo;
     private int valor;
     private int franquiaHoras;
+
+    public PlanoModels(){
+
+    }
 
     public PlanoModels(int id, String nome, int periodicidades, String tipoVeiculo, int valor, int franquiaHoras) {
         this.id = id;
@@ -63,6 +77,21 @@ public class PlanoModels {
 
     public void setFranquiaHoras(int franquiaHoras) {
         this.franquiaHoras = franquiaHoras;
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + id + "\n" +
+                "Nome: " + nome + "\n" +
+                "Período: " + periodicidades + "\n" +
+                "Tipo do Veículo: " + tipoVeiculo + "\n" +
+                "Valor: " + valor + "\n" +
+                "Horas Contratadas" + franquiaHoras + "\n";
+    }
+
+    @Bean
+    public Plano getPlano() {
+        return new Plano();
     }
 }
 

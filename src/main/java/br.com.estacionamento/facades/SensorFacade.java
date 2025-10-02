@@ -2,10 +2,14 @@ package br.com.estacionamento.facades;
 
 import br.com.estacionamento.applications.SensorApplication;
 import br.com.estacionamento.entities.Sensor;
+import br.com.estacionamento.models.SensorModels;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
 
+
+@Component
 public class SensorFacade {
     private final SensorApplication sensorApplication;
 
@@ -13,23 +17,23 @@ public class SensorFacade {
         this.sensorApplication = sensorApplication;
     }
 
-    public List<Sensor> buscarTodos() throws IOException {
+    public List<SensorModels> buscarTodos() throws IOException {
         return this.sensorApplication.buscarTodos();
     }
 
-    public Sensor buscarPorId(Sensor sensor) throws IOException {
-        return this.sensorApplication.buscarPorId(sensor);
+    public SensorModels buscarPorId(int id) throws IOException {
+        return this.sensorApplication.buscarPorId(id);
     }
 
-    public void adicionar(Sensor sensor) throws IOException {
-        this.sensorApplication.adicionar(sensor);
+    public void adicionar(SensorModels sensorModels) throws IOException {
+        this.sensorApplication.adicionar(sensorModels);
     }
 
-    public void remover(Sensor sensor) throws IOException {
-        this.sensorApplication.remover(sensor);
+    public void remover(int id) throws IOException {
+        this.sensorApplication.remover(id);
     }
 
-    public void atualizar(int id, Sensor sensor) throws IOException {
-        this.sensorApplication.atualizar(sensor, sensor.getId());
+    public void atualizar(int id, SensorModels sensorModels) throws IOException {
+        this.sensorApplication.atualizar(sensorModels, id);
     }
 }

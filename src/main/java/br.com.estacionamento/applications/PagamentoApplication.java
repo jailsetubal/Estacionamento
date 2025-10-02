@@ -1,11 +1,14 @@
 package br.com.estacionamento.applications;
 
-import br.com.estacionamento.entities.Pagamento;
-import br.com.estacionamento.repositories.PagamentoRepository;
+import br.com.estacionamento.interfaces.PagamentoRepository;
+import br.com.estacionamento.models.PagamentoModels;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
+
+@Service
 public class PagamentoApplication {
     private PagamentoRepository pagamentoRepository;
 
@@ -13,23 +16,23 @@ public class PagamentoApplication {
         this.pagamentoRepository = pagamentoRepository;
     }
 
-    public List<Pagamento> buscarTodos() throws IOException {
+    public List<PagamentoModels> buscarTodos() throws IOException {
         return this.pagamentoRepository.buscarTodos();
     }
 
-    public Pagamento buscarPorId(Pagamento pagamento) throws IOException{
-        return this.pagamentoRepository.buscarPorID(pagamento.getId());
+    public PagamentoModels buscarPorId(int id) throws IOException{
+        return this.pagamentoRepository.buscarPorId(id);
     }
 
-    public void adicionar(Pagamento pagamento) throws IOException{
+    public void adicionar(PagamentoModels pagamento) throws IOException{
         this.pagamentoRepository.adicionar(pagamento);
     }
 
-    public void remover(Pagamento pagamento) throws IOException{
-        this.pagamentoRepository.remover(pagamento.getId());
+    public void remover(int id) throws IOException{
+        this.pagamentoRepository.remover(id);
     }
 
-    public void atualizar(Pagamento pagamento, int id) throws IOException{
+    public void atualizar(PagamentoModels pagamento, int id) throws IOException{
         this.pagamentoRepository.atualizar(pagamento.getId(), pagamento);
     }
 }

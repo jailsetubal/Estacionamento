@@ -1,17 +1,19 @@
-package br.com.estacionamento.repositories;
+package br.com.estacionamento.repositories.veiculo;
 
 import br.com.estacionamento.entities.Veiculo;
+import br.com.estacionamento.models.VeiculoModels;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class VeiculoRepository {
-    private List<Veiculo> veiculos = new ArrayList<>();
+public class VeiculoRepositoryImpl {
+    private List<VeiculoModels> veiculos = new ArrayList<>();
 
-    public List<Veiculo> buscarTodos(){
+    public List<VeiculoModels> buscarTodos(){
         return veiculos;
     }
 
-    public Veiculo buscarPorId(int id) {
+    public VeiculoModels buscarPorId(int id) {
         return veiculos
                 .stream()
                 .filter(c -> c.getId() == id)
@@ -19,7 +21,7 @@ public class VeiculoRepository {
                 .get();
     }
 
-    public void adicionar(Veiculo veiculo){
+    public void adicionar(VeiculoModels veiculo){
         this.veiculos.add(veiculo);
     }
 
@@ -27,8 +29,8 @@ public class VeiculoRepository {
         this.veiculos.removeIf(v -> v.getId() == id);
     }
 
-    public void atualizar(int id, Veiculo veiculo){
-        Veiculo veiculoInMemoiry = buscarPorId(id);
+    public void atualizar(int id, VeiculoModels veiculo){
+        VeiculoModels veiculoInMemoiry = buscarPorId(id);
 
         veiculoInMemoiry.setPlaca(veiculo.getPlaca());
         veiculoInMemoiry.setTipo(veiculo.getTipo());

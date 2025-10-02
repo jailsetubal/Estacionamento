@@ -9,7 +9,9 @@ public class Plano{
     private int valor;
     private int franquiaHoras;
 
+    public Plano(){
 
+    }
 
     public Plano(int id, String nome, int periodicidades, String tipoVeiculo, int valor, int franquiaHoras) {
         this.id = id;

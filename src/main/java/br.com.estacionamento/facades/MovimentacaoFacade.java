@@ -2,10 +2,13 @@ package br.com.estacionamento.facades;
 
 import br.com.estacionamento.applications.MovimentacaoApplication;
 import br.com.estacionamento.entities.Movimentacao;
+import br.com.estacionamento.models.MovimentacaoModels;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
 
+@Component
 public class MovimentacaoFacade {
     private final MovimentacaoApplication movimentacaoApplication;
 
@@ -13,23 +16,23 @@ public class MovimentacaoFacade {
         this.movimentacaoApplication = movimentacaoApplication;
     }
 
-    public List<Movimentacao> buscarTodos() throws IOException {
+    public List<MovimentacaoModels> buscarTodos() throws IOException {
         return this.movimentacaoApplication.buscarTodos();
     }
 
-    public Movimentacao buscarPorId(Movimentacao movimentacao) throws IOException{
-        return this.movimentacaoApplication.buscarPorId(movimentacao);
+    public MovimentacaoModels buscarPorId(int id) throws IOException{
+        return this.movimentacaoApplication.buscarPorId(id);
     }
 
-    public void adicionar(Movimentacao movimentacao) throws IOException{
-        this.movimentacaoApplication.adicionar(movimentacao);
+    public void adicionar(MovimentacaoModels movimentacaoModels) throws IOException{
+        this.movimentacaoApplication.adicionar(movimentacaoModels);
     }
 
-    public void remover(Movimentacao movimentacao) throws IOException{
-        this.movimentacaoApplication.remover(movimentacao);
+    public void remover(int id) throws IOException{
+        this.movimentacaoApplication.remover(id);
     }
 
-    public void atualizar(int id, Movimentacao movimentacao) throws IOException{
-        this.movimentacaoApplication.atualizar(movimentacao, movimentacao.getId());
+    public void atualizar(int id, MovimentacaoModels movimentacaoModels) throws IOException{
+        this.movimentacaoApplication.atualizar(movimentacaoModels, id);
     }
 }

@@ -1,11 +1,15 @@
 package br.com.estacionamento.applications;
 
 import br.com.estacionamento.entities.Movimentacao;
-import br.com.estacionamento.repositories.MovimentacaoRepository;
+import br.com.estacionamento.interfaces.MovimentacaoRepository;
+import br.com.estacionamento.models.MovimentacaoModels;
+import br.com.estacionamento.repositories.movimentacao.MovimentacaoRepositoryImpl;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
+@Service
 public class MovimentacaoApplication {
     private MovimentacaoRepository movimentacaoRepository;
 
@@ -13,23 +17,23 @@ public class MovimentacaoApplication {
         this.movimentacaoRepository = movimentacaoRepository;
     }
 
-    public List<Movimentacao> buscarTodos() throws IOException {
+    public List<MovimentacaoModels> buscarTodos() throws IOException {
         return this.movimentacaoRepository.buscarTodos();
     }
 
-    public Movimentacao buscarPorId(Movimentacao movimentacao) throws IOException{
-        return this.movimentacaoRepository.buscarPorId(movimentacao.getId());
+    public MovimentacaoModels buscarPorId(int id) throws IOException{
+        return this.movimentacaoRepository.buscarPorId(id);
     }
 
-    public void adicionar(Movimentacao movimentacao) throws IOException{
-        this.movimentacaoRepository.adicionar(movimentacao);
+    public void adicionar(MovimentacaoModels movimentacaoModels) throws IOException{
+        this.movimentacaoRepository.adicionar(movimentacaoModels);
     }
 
-    public void remover(Movimentacao movimentacao) throws IOException{
-        this.movimentacaoRepository.remover(movimentacao.getId());
+    public void remover(int id) throws IOException{
+        this.movimentacaoRepository.remover(id);
     }
 
-    public void atualizar(Movimentacao movimentacao, int id) throws IOException{
-        this.movimentacaoRepository.atualizar(movimentacao.getId(), movimentacao);
+    public void atualizar(MovimentacaoModels movimentacaoModels, int id) throws IOException{
+        this.movimentacaoRepository.atualizar(id, movimentacaoModels);
     }
 }
