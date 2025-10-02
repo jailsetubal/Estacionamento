@@ -1,11 +1,15 @@
 package br.com.estacionamento.applications;
 
 import br.com.estacionamento.entities.FormaPagamento;
-import br.com.estacionamento.repositories.FormaPagamentoRepository;
+import br.com.estacionamento.interfaces.FormaPagamentoRepository;
+import br.com.estacionamento.models.FormaPagamentoModels;
+import br.com.estacionamento.repositories.formaPagamento.FormaPagamentoRepositoryImpl;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
+@Service
 public class FormaPagamentoApplication {
     private FormaPagamentoRepository formaPagamentoRepository;
 
@@ -13,23 +17,23 @@ public class FormaPagamentoApplication {
         this.formaPagamentoRepository = formaPagamentoRepository;
     }
 
-    public List<FormaPagamento> buscarTodos() throws IOException {
+    public List<FormaPagamentoModels> buscarTodos() throws IOException {
         return this.formaPagamentoRepository.buscarTodos();
     }
 
-    public FormaPagamento buscarPorId(FormaPagamento formaPagamento) throws IOException{
-        return this.formaPagamentoRepository.buscarPorId(formaPagamento.getId());
+    public FormaPagamentoModels buscarPorId(int id) throws IOException{
+        return this.formaPagamentoRepository.buscarPorId(id);
     }
 
-    public void adicionar(FormaPagamento formaPagamento) throws IOException{
-        this.formaPagamentoRepository.adicionar(formaPagamento);
+    public void adicionar(FormaPagamentoModels formaPagamentoModels) throws IOException{
+        this.formaPagamentoRepository.adicionar(formaPagamentoModels);
     }
 
-    public void remover(FormaPagamento formaPagamento) throws IOException{
-        this.formaPagamentoRepository.remover(formaPagamento.getId());
+    public void remover(int id) throws IOException{
+        this.formaPagamentoRepository.remover(id);
     }
 
-    public void atualizar(FormaPagamento formaPagamento, int id) throws IOException{
-        this.formaPagamentoRepository.atualizar(formaPagamento.getId(), formaPagamento);
+    public void atualizar(FormaPagamentoModels formaPagamentoModels, int id) throws IOException{
+        this.formaPagamentoRepository.atualizar(id, formaPagamentoModels);
     }
 }
