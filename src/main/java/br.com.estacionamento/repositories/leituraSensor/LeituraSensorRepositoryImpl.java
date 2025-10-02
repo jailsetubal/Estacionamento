@@ -1,11 +1,11 @@
-package br.com.estacionamento.repositories;
+package br.com.estacionamento.repositories.leituraSensor;
 
 import br.com.estacionamento.entities.LeituraSensor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeituraSensorRepository {
+public class LeituraSensorRepositoryImpl {
     private List<LeituraSensor> leituras = new ArrayList<>();
 
     public List<LeituraSensor> buscarTodos(){

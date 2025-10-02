@@ -5,6 +5,10 @@ public class FormaPagamento {
     private int id;
     private String tipo;
 
+    public FormaPagamento(){
+
+    }
+
     public FormaPagamento(int id, String tipo) {
         this.id = id;
         this.tipo = tipo;

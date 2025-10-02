@@ -5,6 +5,10 @@ public class LeituraSensor{
     private String momento;
     private boolean ocupado;
 
+    public LeituraSensor(){
+
+    }
+
     public LeituraSensor(int id, String momento, boolean ocupado) {
         this.id = id;
         this.momento = momento;

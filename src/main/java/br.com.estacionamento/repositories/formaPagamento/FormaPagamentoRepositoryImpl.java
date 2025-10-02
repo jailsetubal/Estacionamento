@@ -1,11 +1,11 @@
-package br.com.estacionamento.repositories;
+package br.com.estacionamento.repositories.formaPagamento;
 
 import br.com.estacionamento.entities.FormaPagamento;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FormaPagamentoRepository {
+public class FormaPagamentoRepositoryImpl {
     private List<FormaPagamento> fPagamento = new ArrayList<>();
 
     public List<FormaPagamento> buscarTodos(){

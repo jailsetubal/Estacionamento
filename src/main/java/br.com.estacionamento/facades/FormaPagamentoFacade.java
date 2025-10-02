@@ -2,10 +2,13 @@ package br.com.estacionamento.facades;
 
 import br.com.estacionamento.applications.FormaPagamentoApplication;
 import br.com.estacionamento.entities.FormaPagamento;
+import br.com.estacionamento.models.FormaPagamentoModels;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
 
+@Component
 public class FormaPagamentoFacade {
     private final FormaPagamentoApplication formaPagamentoApplication;
 
@@ -13,23 +16,23 @@ public class FormaPagamentoFacade {
         this.formaPagamentoApplication = formaPagamentoApplication;
     }
 
-    public List<FormaPagamento> buscarTodos() throws IOException {
+    public List<FormaPagamentoModels> buscarTodos() throws IOException {
         return this.formaPagamentoApplication.buscarTodos();
     }
 
-    public FormaPagamento buscarPorId(FormaPagamento formaPagamento) throws IOException {
-        return this.formaPagamentoApplication.buscarPorId(formaPagamento);
+    public FormaPagamentoModels buscarPorId(int id) throws IOException {
+        return this.formaPagamentoApplication.buscarPorId(id);
     }
 
-    public void adicionar(FormaPagamento formaPagamento) throws IOException {
-        this.formaPagamentoApplication.adicionar(formaPagamento);
+    public void adicionar(FormaPagamentoModels formaPagamentoModels) throws IOException {
+        this.formaPagamentoApplication.adicionar(formaPagamentoModels);
     }
 
-    public void remover(FormaPagamento formaPagamento) throws IOException {
-        this.formaPagamentoApplication.remover(formaPagamento);
+    public void remover(int id) throws IOException {
+        this.formaPagamentoApplication.remover(id);
     }
 
-    public void atualizar(int id, FormaPagamento formaPagamento) throws IOException {
-        this.formaPagamentoApplication.atualizar(formaPagamento, formaPagamento.getId());
+    public void atualizar(int id, FormaPagamentoModels formaPagamentoModels) throws IOException {
+        this.formaPagamentoApplication.atualizar(formaPagamentoModels, formaPagamentoModels.getId());
     }
 }
