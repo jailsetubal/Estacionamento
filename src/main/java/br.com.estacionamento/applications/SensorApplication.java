@@ -1,11 +1,15 @@
 package br.com.estacionamento.applications;
 
 import br.com.estacionamento.entities.Sensor;
-import br.com.estacionamento.repositories.SensorRepository;
+import br.com.estacionamento.interfaces.SensorRepository;
+import br.com.estacionamento.models.SensorModels;
+import br.com.estacionamento.repositories.sensor.SensorRepositoryImpl;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
+@Service
 public class SensorApplication {
     private SensorRepository sensorRepository;
 
@@ -13,23 +17,23 @@ public class SensorApplication {
         this.sensorRepository = sensorRepository;
     }
 
-    public List<Sensor> buscarTodos() throws IOException {
+    public List<SensorModels> buscarTodos() throws IOException {
         return this.sensorRepository.buscarTodos();
     }
 
-    public Sensor buscarPorId(Sensor sensor) throws IOException{
-        return this.sensorRepository.buscarPorId(sensor.getId());
+    public SensorModels buscarPorId(int id) throws IOException{
+        return this.sensorRepository.buscarPorId(id);
     }
 
-    public void adicionar(Sensor sensor) throws IOException{
-        this.sensorRepository.adicionar(sensor);
+    public void adicionar(SensorModels sensorModels) throws IOException{
+        this.sensorRepository.adicionar(sensorModels);
     }
 
-    public void remover(Sensor sensor) throws IOException{
-        this.sensorRepository.remover(sensor.getId());
+    public void remover(int id) throws IOException{
+        this.sensorRepository.remover(id);
     }
 
-    public void atualizar(Sensor sensor, int id) throws IOException{
-        this.sensorRepository.atualizar(sensor.getId(), sensor);
+    public void atualizar(SensorModels sensorModels, int id) throws IOException{
+        this.sensorRepository.atualizar(id, sensorModels);
     }
 }

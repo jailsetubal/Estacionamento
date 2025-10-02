@@ -8,6 +8,10 @@ public class Vaga {
     public String setor;
     public Boolean temSensor;
 
+    public Vaga(){
+
+    }
+
     public Vaga(int id, int numeroVaga, String tipoVaga, String andar, String setor, Boolean temSensor) {
         this.id = id;
         this.numeroVaga = numeroVaga;

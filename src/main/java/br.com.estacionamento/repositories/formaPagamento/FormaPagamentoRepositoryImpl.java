@@ -1,18 +1,19 @@
 package br.com.estacionamento.repositories.formaPagamento;
 
 import br.com.estacionamento.entities.FormaPagamento;
+import br.com.estacionamento.models.FormaPagamentoModels;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FormaPagamentoRepositoryImpl {
-    private List<FormaPagamento> fPagamento = new ArrayList<>();
+    private List<FormaPagamentoModels> fPagamento = new ArrayList<>();
 
-    public List<FormaPagamento> buscarTodos(){
+    public List<FormaPagamentoModels> buscarTodos(){
         return fPagamento;
     }
 
-    public FormaPagamento buscarPorId(int id) {
+    public FormaPagamentoModels buscarPorId(int id) {
         return fPagamento
                 .stream()
                 .filter(c -> c.getId() == id)
@@ -20,17 +21,17 @@ public class FormaPagamentoRepositoryImpl {
                 .get();
     }
 
-    public void adicionar(FormaPagamento formaPagamento){
-        this.fPagamento.add(formaPagamento);
+    public void adicionar(FormaPagamentoModels formaPagamentoModels){
+        this.fPagamento.add(formaPagamentoModels);
     }
 
     public void remover(int id){
         this.fPagamento.removeIf(f -> f.getId() == id);
     }
 
-    public void atualizar(int id, FormaPagamento formaPagamento){
-        FormaPagamento pagamentoInMemoiry = buscarPorId(id);
+    public void atualizar(int id, FormaPagamentoModels formaPagamentoModels){
+        FormaPagamentoModels pagamentoInMemoiry = buscarPorId(id);
 
-        pagamentoInMemoiry.setTipo(formaPagamento.getTipo());
+        pagamentoInMemoiry.setTipo(formaPagamentoModels.getTipo());
     }
 }

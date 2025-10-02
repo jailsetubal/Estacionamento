@@ -7,6 +7,10 @@ public class Veiculo {
     private String modelo;
     private String cor;
 
+    public Veiculo(){
+
+    }
+
     public Veiculo(int id, String placa, String tipo, String modelo, String cor) {
         this.id = id;
         this.placa = placa;

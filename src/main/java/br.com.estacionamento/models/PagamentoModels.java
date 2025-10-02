@@ -1,10 +1,24 @@
 package br.com.estacionamento.models;
 
+
+import br.com.estacionamento.entities.Cliente;
+import br.com.estacionamento.entities.Pagamento;
+import jakarta.persistence.*;
+import org.springframework.context.annotation.Bean;
+
+@Entity
+@Table(name = "Pagamentos")
 public class PagamentoModels {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String dataPagamento;
     private float valor;
     private String status;
+
+    public PagamentoModels(){
+
+    }
 
     public PagamentoModels(int id, String dataPagamento, float valor, String status) {
         this.id = id;
@@ -43,5 +57,18 @@ public class PagamentoModels {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + id + "\n" +
+                "Data de Pagamento: " + dataPagamento + "\n" +
+                "Valor: " + valor + "\n" +
+                "Status: " + status + "\n";
+    }
+
+    @Bean
+    public Pagamento getPagamento() {
+        return new Pagamento();
     }
 }

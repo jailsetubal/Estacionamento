@@ -6,6 +6,10 @@ public class Pagamento{
     private float valor;
     private String status;
 
+    public Pagamento(){
+
+    }
+
     public Pagamento(int id, String dataPagamento, float valor, String status) {
         this.id = id;
         this.dataPagamento = dataPagamento;

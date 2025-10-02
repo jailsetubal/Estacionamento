@@ -16,6 +16,10 @@ public class LeituraSensorModels {
     private String momento;
     private boolean ocupado;
 
+    public LeituraSensorModels(){
+
+    }
+
     public LeituraSensorModels(int id, String momento, boolean ocupado) {
         this.id = id;
         this.momento = momento;

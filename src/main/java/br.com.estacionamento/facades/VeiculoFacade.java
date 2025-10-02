@@ -2,10 +2,14 @@ package br.com.estacionamento.facades;
 
 import br.com.estacionamento.applications.VeiculoApplication;
 import br.com.estacionamento.entities.Veiculo;
+import br.com.estacionamento.models.VeiculoModels;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
 
+
+@Component
 public class VeiculoFacade {
     private final VeiculoApplication veiculoApplication;
 
@@ -13,23 +17,23 @@ public class VeiculoFacade {
         this.veiculoApplication = veiculoApplication;
     }
 
-    public List<Veiculo> buscarTodos() throws IOException {
+    public List<VeiculoModels> buscarTodos() throws IOException {
         return this.veiculoApplication.buscarTodos();
     }
 
-    public Veiculo buscarPorId(Veiculo veiculo) throws IOException{
-        return this.veiculoApplication.buscarPorId(veiculo);
+    public VeiculoModels buscarPorId(int id) throws IOException{
+        return this.veiculoApplication.buscarPorId(id);
     }
 
-    public void adicionar(Veiculo veiculo) throws IOException{
-        this.veiculoApplication.adicionar(veiculo);
+    public void adicionar(VeiculoModels veiculoModels) throws IOException{
+        this.veiculoApplication.adicionar(veiculoModels);
     }
 
-    public void remover(Veiculo veiculo) throws IOException{
-        this.veiculoApplication.remover(veiculo);
+    public void remover(int id) throws IOException{
+        this.veiculoApplication.remover(id);
     }
 
-    public void atualizar(int id, Veiculo veiculo) throws IOException{
-        this.veiculoApplication.atualizar(veiculo, veiculo.getId());
+    public void atualizar(int id, VeiculoModels veiculoModels) throws IOException{
+        this.veiculoApplication.atualizar(veiculoModels, id);
     }
 }

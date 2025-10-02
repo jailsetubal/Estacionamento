@@ -1,11 +1,24 @@
 package br.com.estacionamento.models;
 
+import br.com.estacionamento.entities.Cliente;
+import br.com.estacionamento.entities.Veiculo;
+import jakarta.persistence.*;
+import org.springframework.context.annotation.Bean;
+
+@Entity
+@Table(name = "Veiculos")
 public class VeiculoModels {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String placa;
     private String tipo;
     private String modelo;
     private String cor;
+
+    public VeiculoModels(){
+
+    }
 
     public VeiculoModels(int id, String placa, String tipo, String modelo, String cor) {
         this.id = id;
@@ -53,6 +66,20 @@ public class VeiculoModels {
 
     public void setCor(String cor) {
         this.cor = cor;
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + id + "\n" +
+                "Placa: " + placa + "\n" +
+                "Tipo: " + tipo + "\n" +
+                "Modelo: " + modelo + "\n" +
+                "Cor: " + cor + "\n";
+    }
+
+    @Bean
+    public Veiculo getVeiculo() {
+        return new Veiculo();
     }
 }
 
