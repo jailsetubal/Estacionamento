@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Bean;
 public class ClienteModels {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private int id;
     private String nome;
     private String email;
