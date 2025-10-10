@@ -65,10 +65,5 @@ public class MovimentacaoModels {
                 "Saída: " + saida + "\n" +
                 "Valor Calculado: " + valorCalculado + "\n";
     }
-
-    @Bean
-    public Movimentacao getMovimentacao() {
-        return new Movimentacao();
-    }
 }
 

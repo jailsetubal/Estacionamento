@@ -1,9 +1,7 @@
 package br.com.estacionamento.applications;
 
-import br.com.estacionamento.entities.FormaPagamento;
 import br.com.estacionamento.interfaces.FormaPagamentoRepository;
 import br.com.estacionamento.models.FormaPagamentoModels;
-import br.com.estacionamento.repositories.formaPagamento.FormaPagamentoRepositoryImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

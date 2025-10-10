@@ -2,7 +2,6 @@ package br.com.estacionamento.applications;
 
 import br.com.estacionamento.interfaces.PlanoRepository;
 import br.com.estacionamento.models.PlanoModels;
-import br.com.estacionamento.repositories.plano.PlanoRepositoryImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

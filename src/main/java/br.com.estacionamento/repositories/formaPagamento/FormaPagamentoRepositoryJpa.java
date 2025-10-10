@@ -40,6 +40,8 @@ public class FormaPagamentoRepositoryJpa implements FormaPagamentoRepository {
 
     @Override
     public void atualizar(int id, FormaPagamentoModels formaPagamentoModels) {
-        //
+        FormaPagamentoModels formaPagamentoModelsInDB = this.formaPagamentoModelRepositoryJpa.findById(id).get();
+
+        formaPagamentoModelsInDB.setTipo(formaPagamentoModels.getTipo());
     }
 }

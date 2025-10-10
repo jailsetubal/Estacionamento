@@ -1,9 +1,7 @@
 package br.com.estacionamento.applications;
 
-import br.com.estacionamento.entities.Movimentacao;
 import br.com.estacionamento.interfaces.MovimentacaoRepository;
 import br.com.estacionamento.models.MovimentacaoModels;
-import br.com.estacionamento.repositories.movimentacao.MovimentacaoRepositoryImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

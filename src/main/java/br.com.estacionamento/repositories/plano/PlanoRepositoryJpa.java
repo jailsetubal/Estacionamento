@@ -38,6 +38,12 @@ public class PlanoRepositoryJpa implements PlanoRepository {
 
     @Override
     public void atualizar(int id, PlanoModels planoModels) {
-        //
+        PlanoModels planoInDB = this.planoModelRepositoryJpa.findById(id).get();
+
+        planoInDB.setNome(planoModels.getNome());
+        planoInDB.setPeriodicidades(planoModels.getPeriodicidades());
+        planoInDB.setTipoVeiculo(planoModels.gettipoVeiculo());
+        planoInDB.setValor(planoModels.getValor());
+        planoInDB.setFranquiaHoras(planoModels.getFranquiaHoras());
     }
 }

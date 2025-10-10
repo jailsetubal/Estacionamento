@@ -76,11 +76,6 @@ public class VeiculoModels {
                 "Modelo: " + modelo + "\n" +
                 "Cor: " + cor + "\n";
     }
-
-    @Bean
-    public Veiculo getVeiculo() {
-        return new Veiculo();
-    }
 }
 
 

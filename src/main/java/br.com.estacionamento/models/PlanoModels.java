@@ -88,11 +88,6 @@ public class PlanoModels {
                 "Valor: " + valor + "\n" +
                 "Horas Contratadas" + franquiaHoras + "\n";
     }
-
-    @Bean
-    public Plano getPlano() {
-        return new Plano();
-    }
 }
 
 

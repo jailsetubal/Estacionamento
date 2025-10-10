@@ -1,9 +1,7 @@
 package br.com.estacionamento.applications;
 
-import br.com.estacionamento.entities.Vaga;
 import br.com.estacionamento.interfaces.VagaRepository;
 import br.com.estacionamento.models.VagaModels;
-import br.com.estacionamento.repositories.vaga.VagaRepositoryImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

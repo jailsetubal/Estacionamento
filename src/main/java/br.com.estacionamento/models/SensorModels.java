@@ -44,10 +44,5 @@ public class SensorModels {
         return "Id: " + id + "\n" +
                 "Data de Instalação: " + dataInstalacao;
     }
-
-    @Bean
-    public Sensor getSensor() {
-        return new Sensor();
-    }
 }
 

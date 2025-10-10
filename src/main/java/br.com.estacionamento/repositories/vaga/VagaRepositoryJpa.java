@@ -41,6 +41,12 @@ public class VagaRepositoryJpa implements VagaRepository {
 
     @Override
     public void atualizar(int id, VagaModels vagaModels) {
-        //
+        VagaModels vagaInDB = this.vagaModelRepositoryJpa.findById(id).get();
+
+        vagaInDB.setNumeroVaga(vagaModels.getNumeroVaga());
+        vagaInDB.setTipoVaga(vagaModels.getTipoVaga());
+        vagaInDB.setAndar(vagaModels.getAndar());
+        vagaInDB.setSetor(vagaModels.getSetor());
+        vagaInDB.setTemSensor(vagaInDB.isOcupado());
     }
 }

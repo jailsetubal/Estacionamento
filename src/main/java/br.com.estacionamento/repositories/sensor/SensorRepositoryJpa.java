@@ -38,6 +38,8 @@ public class SensorRepositoryJpa implements SensorRepository {
 
     @Override
     public void atualizar(int id, SensorModels sensorModels) {
-        //
+        SensorModels sensorInDB = this.sensorModelRepositoryJpa.findById(id).get();
+
+        sensorInDB.setDataInstalacao(sensorInDB.getDataInstalacao());
     }
 }

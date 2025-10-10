@@ -3,7 +3,6 @@ package br.com.estacionamento.applications;
 import br.com.estacionamento.interfaces.AssinaturaRepository;
 import br.com.estacionamento.models.AssinaturaModels;
 import org.springframework.stereotype.Service;
-import br.com.estacionamento.repositories.assinatura.AssinaturaRepositoryImpl;
 
 import java.io.IOException;
 import java.util.List;

@@ -14,13 +14,13 @@ public class ClienteModels {
     private String nome;
     private String email;
     private String endereco;
-    private int telefone;
+    private String telefone;
 
     public ClienteModels(){
 
     }
 
-    public ClienteModels(int id, String nome, String email, String endereco, int telefone){
+    public ClienteModels(int id, String nome, String email, String endereco, String telefone){
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -60,11 +60,11 @@ public class ClienteModels {
         this.endereco = endereco;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -76,10 +76,5 @@ public class ClienteModels {
                 "Email: " + email + "\n" +
                 "Endereço: " + endereco + "\n" +
                 "Telefone: " + telefone + "\n";
-    }
-
-    @Bean
-    public Cliente getCliente() {
-        return new Cliente();
     }
 }

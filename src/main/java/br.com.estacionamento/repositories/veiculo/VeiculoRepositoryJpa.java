@@ -42,7 +42,12 @@ public class VeiculoRepositoryJpa implements VeiculoRepository {
 
     @Override
     public void atualizar(int id, VeiculoModels veiculoModels) {
-        //
+        VeiculoModels veiculoInDB = this.veiculoModelRepositoryJpa.findById(id).get();
+
+        veiculoInDB.setPlaca(veiculoModels.getPlaca());
+        veiculoInDB.setTipo(veiculoModels.getTipo());
+        veiculoInDB.setModelo(veiculoModels.getModelo());
+        veiculoInDB.setCor(veiculoModels.getCor());
     }
 
 }

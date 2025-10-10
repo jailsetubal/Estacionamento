@@ -40,6 +40,10 @@ public class MovimentacaoRepositoryJpa implements MovimentacaoRepository {
 
     @Override
     public void atualizar(int id, MovimentacaoModels movimentacaoModels) {
-        //
+        MovimentacaoModels movimentacaoInDB = this.movimentacaoModelRepositoryJpa.findById(id).get();
+
+        movimentacaoInDB.setEntrada(movimentacaoModels.getEntrada());
+        movimentacaoInDB.setSaida(movimentacaoModels.getSaida());
+        movimentacaoInDB.setValorCalculado(movimentacaoModels.getValorCalculado());
     }
 }

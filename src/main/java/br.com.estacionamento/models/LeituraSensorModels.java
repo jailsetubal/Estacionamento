@@ -56,10 +56,5 @@ public class LeituraSensorModels {
                 "Momento: " + momento + "\n" +
                 "Ocupado" + ocupado;
     }
-
-    @Bean
-    public LeituraSensor getLeituraSensor(){
-        return new LeituraSensor();
-    }
 }
 

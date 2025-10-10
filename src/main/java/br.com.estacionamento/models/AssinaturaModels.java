@@ -67,11 +67,6 @@ public class AssinaturaModels {
                 "Fim: " + fim + "\n" +
                 "Ativo: " + ativo + "\n";
     }
-
-    @Bean
-    public Assinatura getAssinatura() {
-        return new Assinatura();
-    }
 }
 
 

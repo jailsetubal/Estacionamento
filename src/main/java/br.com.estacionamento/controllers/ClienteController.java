@@ -36,8 +36,8 @@ public class ClienteController {
     }
 
     @PutMapping("/clientes/atualizar/{id}")
-    public void atualizarCliente(@PathVariable int id, @RequestBody ClienteModels cliente) throws IOException {
-        this.clienteFacade.atualizar(id, cliente);
+    public void atualizarCliente(@PathVariable int id, @RequestBody ClienteModels clienteModels) throws IOException {
+        this.clienteFacade.atualizar(id, clienteModels);
     }
 
     @DeleteMapping("/clientes/remover/{id}")
