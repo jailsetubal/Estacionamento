@@ -1,9 +1,7 @@
 package br.com.estacionamento.applications;
 
-import br.com.estacionamento.entities.Veiculo;
 import br.com.estacionamento.interfaces.VeiculoRepository;
 import br.com.estacionamento.models.VeiculoModels;
-import br.com.estacionamento.repositories.veiculo.VeiculoRepositoryImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

@@ -39,8 +39,12 @@ public class PagamentoRepositoryJpa implements PagamentoRepository {
     }
 
     @Override
-    public void atualizar(int id, PagamentoModels pagamentoModels) {
-        //
+    public void atualizar(int id, PagamentoModels pagamento) {
+        PagamentoModels pagamentoInDB = this.pagamentoModelRepositoryJpa.findById(id).get();
+
+        pagamentoInDB.setDataPagamento(pagamento.getDataPagamento());
+        pagamentoInDB.setValor(pagamento.getValor());
+        pagamentoInDB.setDataPagamento(pagamento.getDataPagamento());
     }
 
 }

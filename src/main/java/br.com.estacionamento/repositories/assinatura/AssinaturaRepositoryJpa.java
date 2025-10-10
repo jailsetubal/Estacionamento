@@ -39,6 +39,10 @@ public class AssinaturaRepositoryJpa implements AssinaturaRepository {
 
     @Override
     public void atualizar(int id, AssinaturaModels assinaturaModels) {
-        //
+        AssinaturaModels assinaturaModelsInDB = this.assinaturaModelRepositoryJpa.findById(id).get();
+
+        assinaturaModelsInDB.setInicio(assinaturaModels.getInicio());
+        assinaturaModelsInDB.setFim(assinaturaModels.getFim());
+        assinaturaModelsInDB.setAtivo(assinaturaModelsInDB.isAtivo());
     }
 }

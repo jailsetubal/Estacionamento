@@ -66,9 +66,4 @@ public class PagamentoModels {
                 "Valor: " + valor + "\n" +
                 "Status: " + status + "\n";
     }
-
-    @Bean
-    public Pagamento getPagamento() {
-        return new Pagamento();
-    }
 }

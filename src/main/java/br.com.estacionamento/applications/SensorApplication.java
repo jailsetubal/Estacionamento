@@ -1,9 +1,7 @@
 package br.com.estacionamento.applications;
 
-import br.com.estacionamento.entities.Sensor;
 import br.com.estacionamento.interfaces.SensorRepository;
 import br.com.estacionamento.models.SensorModels;
-import br.com.estacionamento.repositories.sensor.SensorRepositoryImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

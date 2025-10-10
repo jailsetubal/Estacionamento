@@ -88,11 +88,6 @@ public class VagaModels {
                 "Setor: " + setor + "\n" +
                 "Tem Sensor? " + temSensor;
     }
-
-    @Bean
-    public Vaga getVaga() {
-        return new Vaga();
-    }
 }
 
 

@@ -42,11 +42,6 @@ public class FormaPagamentoModels {
         return "Id:" + id + "\n" +
                 "Tipo: " + tipo + "\n";
     }
-
-    @Bean
-    public FormaPagamento getFormaPagamento(){
-        return new FormaPagamento();
-    }
 }
 
 

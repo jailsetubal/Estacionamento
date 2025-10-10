@@ -42,6 +42,9 @@ public class LeituraSensorRepositoryJpa implements LeituraSensorRepository {
 
     @Override
     public void atualizar(int id, LeituraSensorModels leituraSensorModels) {
-        //
+        LeituraSensorModels leituraSensorInDB = this.leituraSensorModelRepositoryJpa.findById(id).get();
+
+        leituraSensorInDB.setMomento(leituraSensorModels.getMomento());
+        leituraSensorInDB.setOcupado(leituraSensorModels.isOcupado());
     }
 }
