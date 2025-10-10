@@ -39,6 +39,8 @@ public class ClienteRepositoryJpa implements ClienteRepository {
 
     @Override
     public void atualizar(int id, ClienteModels clienteModels) {
-        //
+        ClienteModels clienteModelsInDb = this.clienteModelRepositoryJpa.findById(id).get();
+
+        clienteModelsInDb.setEmail(clienteModels.);
     }
 }
