@@ -77,9 +77,4 @@ public class ClienteModels {
                 "Endereço: " + endereco + "\n" +
                 "Telefone: " + telefone + "\n";
     }
-
-    @Bean
-    public Cliente getCliente() {
-        return new Cliente();
-    }
 }
