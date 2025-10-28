@@ -45,5 +45,7 @@ public class ClienteRepositoryJpa implements ClienteRepository {
         clienteInDB.setEmail(clienteModels.getEmail());
         clienteInDB.setEndereco(clienteModels.getEndereco());
         clienteInDB.setTelefone(clienteModels.getTelefone());
+
+        this.clienteModelRepositoryJpa.save(clienteInDB);
     }
 }

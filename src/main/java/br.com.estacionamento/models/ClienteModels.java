@@ -2,8 +2,12 @@ package br.com.estacionamento.models;
 
 
 import br.com.estacionamento.entities.Cliente;
+import br.com.estacionamento.entities.Veiculo;
 import jakarta.persistence.*;
 import org.springframework.context.annotation.Bean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Clientes")
@@ -15,6 +19,9 @@ public class ClienteModels {
     private String email;
     private String endereco;
     private String telefone;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<VeiculoModels> veiculos = new ArrayList<>();
 
     public ClienteModels(){
 

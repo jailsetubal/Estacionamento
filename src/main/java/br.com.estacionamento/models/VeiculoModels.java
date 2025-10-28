@@ -16,6 +16,13 @@ public class VeiculoModels {
     private String modelo;
     private String cor;
 
+    @Column(name = "cliente_id")
+    private int clienteId;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", referencedColumnName = "id",insertable = false, updatable = false)
+    private ClienteModels cliente;
+
     public VeiculoModels(){
 
     }
@@ -75,6 +82,22 @@ public class VeiculoModels {
                 "Tipo: " + tipo + "\n" +
                 "Modelo: " + modelo + "\n" +
                 "Cor: " + cor + "\n";
+    }
+
+    public int getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(int clienteId) {
+        this.clienteId = clienteId;
+    }
+
+    public ClienteModels getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(ClienteModels cliente) {
+        this.cliente = cliente;
     }
 }
 

@@ -1,6 +1,6 @@
 package br.com.estacionamento.entities;
 
-public class Cliente {
+public class    Cliente {
     private int id;
     private String nome;
     private String email;
