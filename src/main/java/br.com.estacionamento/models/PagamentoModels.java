@@ -16,6 +16,16 @@ public class PagamentoModels {
     private float valor;
     private String status;
 
+    @Column(name = "plano_Id")
+    private int planoId;
+
+    @ManyToOne
+    @JoinColumn(name = "plano_id", referencedColumnName = "id", insertable = false, updatable = false)
+    private PlanoModels planos;
+
+
+
+
     public PagamentoModels(){
 
     }

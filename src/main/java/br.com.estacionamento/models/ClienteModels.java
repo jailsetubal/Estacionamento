@@ -23,6 +23,10 @@ public class ClienteModels {
     @OneToMany(mappedBy = "cliente")
     private List<VeiculoModels> veiculos = new ArrayList<>();
 
+    @OneToMany(mappedBy = "cliente")
+    private List<AssinaturaModels> assinaturas = new ArrayList<>();
+
+
     public ClienteModels(){
 
     }
