@@ -6,6 +6,9 @@ import br.com.estacionamento.entities.Vaga;
 import jakarta.persistence.*;
 import org.springframework.context.annotation.Bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Vagas")
 public class VagaModels {
@@ -17,6 +20,9 @@ public class VagaModels {
     public String andar;
     public String setor;
     public Boolean temSensor;
+
+    @OneToMany(mappedBy = "vagas")
+    private List<MovimentacaoModels> movimentacoes = new ArrayList<>();
 
     VagaModels(){
 

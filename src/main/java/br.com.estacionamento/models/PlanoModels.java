@@ -6,6 +6,9 @@ import br.com.estacionamento.entities.Plano;
 import jakarta.persistence.*;
 import org.springframework.context.annotation.Bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Planos")
 public class PlanoModels {
@@ -17,6 +20,12 @@ public class PlanoModels {
     private String tipoVeiculo;
     private int valor;
     private int franquiaHoras;
+
+    @OneToMany(mappedBy = "planos")
+    private List<AssinaturaModels> assinaturas = new ArrayList<>();
+
+    @OneToMany(mappedBy = "planos")
+    private List<PagamentoModels> pagamentos = new ArrayList<>();
 
     public PlanoModels(){
 

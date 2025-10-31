@@ -5,6 +5,9 @@ import br.com.estacionamento.entities.Veiculo;
 import jakarta.persistence.*;
 import org.springframework.context.annotation.Bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Veiculos")
 public class VeiculoModels {
@@ -22,6 +25,9 @@ public class VeiculoModels {
     @ManyToOne
     @JoinColumn(name = "cliente_id", referencedColumnName = "id",insertable = false, updatable = false)
     private ClienteModels cliente;
+
+    @OneToMany(mappedBy = "veiculos")
+    private List<MovimentacaoModels> movimentacoes = new ArrayList<>();
 
     public VeiculoModels(){
 
