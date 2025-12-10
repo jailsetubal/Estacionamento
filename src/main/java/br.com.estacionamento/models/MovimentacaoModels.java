@@ -40,6 +40,13 @@ public class MovimentacaoModels {
     @JoinColumn(name = "vaga_Id", referencedColumnName = "id", insertable = false, updatable = false)
     private VagaModels vagas;
 
+    @Column(name = "pagamento_Id")
+    private int pagamentoId;
+
+    @ManyToOne
+    @JoinColumn(name = "pagamento_Id", referencedColumnName = "id", insertable = false, updatable = false)
+    private PagamentoModels pagamento;
+
 
 
 

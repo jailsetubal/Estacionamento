@@ -2,9 +2,13 @@ package br.com.estacionamento.models;
 
 
 import br.com.estacionamento.entities.Cliente;
+import br.com.estacionamento.entities.FormaPagamento;
 import br.com.estacionamento.entities.Pagamento;
 import jakarta.persistence.*;
 import org.springframework.context.annotation.Bean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Pagamentos")
@@ -23,7 +27,11 @@ public class PagamentoModels {
     @JoinColumn(name = "plano_id", referencedColumnName = "id", insertable = false, updatable = false)
     private PlanoModels planos;
 
+    @OneToMany(mappedBy = "pagamento")
+    private List<FormaPagamentoModels> formaPagamentos = new ArrayList<>();
 
+    @OneToMany(mappedBy = "pagamento")
+    private List<MovimentacaoModels> movimentacoes = new ArrayList<>();
 
 
     public PagamentoModels(){

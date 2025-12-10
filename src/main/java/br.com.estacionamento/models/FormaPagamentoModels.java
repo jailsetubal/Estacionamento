@@ -13,6 +13,13 @@ public class FormaPagamentoModels {
     private int id;
     private String tipo;
 
+    @Column(name = "pagamento_Id")
+    private int pagamentoId;
+
+    @ManyToOne
+    @JoinColumn(name = "pagamento_Id", referencedColumnName = "id", insertable = false, updatable = false)
+    private PagamentoModels pagamento;
+
     public FormaPagamentoModels(){
 
     }
